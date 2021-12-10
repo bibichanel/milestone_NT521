@@ -8,7 +8,7 @@ pipeline {
         }
         stage('SonarQube analysis'){
             steps{
-               withSonarQubeEnv("sonarqube-container") {
+               withSonarQubeEnv("milestone") {
                     sh "${tool("sonarqube")}/bin/sonar-scanner \
                     -Dsonar.projectKey=test-node-js \
                     -Dsonar.sources=. \
