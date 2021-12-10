@@ -9,7 +9,7 @@ pipeline {
         stage('SonarQube analysis'){
             steps{
                withSonarQubeEnv("milestone") {
-                    sh "${tool("sonarqube")}/bin/sonar-scanner \
+                    sh "${tool("milestone")}/bin/sonar-scanner \
                     -Dsonar.projectKey=test-node-js \
                     -Dsonar.sources=. \
                     -Dsonar.css.node=. \
