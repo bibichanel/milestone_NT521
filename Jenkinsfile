@@ -8,7 +8,7 @@ pipeline {
         }
         stage('SonarQube analysis'){
             steps{
-               withSonarQubeEnv("milestone") {
+               withSonarQubeEnv("sonarqube-container") {
                     sh "${tool("sonarqube-container")}/bin/sonar-scanner"
                }
             }
