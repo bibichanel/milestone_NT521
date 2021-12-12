@@ -7,12 +7,16 @@ pipeline {
             }
         }
         stage('SonarQube analysis'){
-            def scannerHome = tool 'SonarScanner 4.0';
-            withSonarQubeEnv('sonarqube') { 
-                sh "${scannerHome }/bin/sonar-scanner \
-                -Dsonar.projectKey=Milestone_B \
-                -Dsonar.exclusions=vendor/**, storage/**, resources/**, **/*.java \
-                -Dsonar.sources=." 
+            steps{ 
+                 script {
+                     def scannerHome = tool 'sonarqube';
+                     withSonarQubeEnv('sonarqube') {
+                        sh "${"sonarqube"}/bin/sonar-scanner \
+                        -Dsonar.projectKey=Milestone_B \
+                        -Dsonar.exclusions=vendor/**, storage/**, resources/**, **/*.java \
+                        -Dsonar.sources=." 
+                     }
+                }
             }
         }
     }
