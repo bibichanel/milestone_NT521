@@ -13,7 +13,7 @@ pipeline {
                      withSonarQubeEnv('sonarqube') {
                         sh "${scannerHome}/bin/sonar-scanner \
                         -Dsonar.projectKey=Milestone_B \
-                        -Dsonar.exclusions=vendor/**, storage/**, resources/**, **/*.java \
+                        -Dsonar.exclusions='vendor/**, storage/**, resources/**, **/*.java' \
                         -Dsonar.sources=." 
                      }
                 }
