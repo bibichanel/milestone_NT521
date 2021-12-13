@@ -6,6 +6,11 @@ pipeline {
                 git 'https://github.com/bibichanel/milestone_NT521.git'
             }
         }
+        stage('Build') { 
+            steps {
+                sh 'mvn clean install -f /var/jenkins_home/workspace/Milestone_B/pom.xml'
+            }
+        }
         stage('SonarQube analysis'){
             steps{ 
                  script {
