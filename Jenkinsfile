@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Build') { 
             steps {
-                sh 'mvn clean install -f /var/jenkins_home/workspace/Milestone_B/pom.xml'
+                sh 'mvn clean install -f Milestone_Pipeline/pom.xml'
             }
         }
         stage('SonarQube analysis'){
