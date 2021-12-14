@@ -8,7 +8,8 @@ pipeline {
         }
         stage('Build') { 
             steps {
-                sh 'mvn clean install -f Milestone_Pipeline/pom.xml'
+                // sh 'mvn clean install -f Milestone_Pipeline/pom.xml'
+                sh './mvnw spring-boot:run'
             }
         }
         stage('SonarQube analysis'){
