@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Build') { 
             steps {
-                // sh 'mvn clean install -f Milestone_Pipeline/pom.xml'
+                sh 'chmod +x mvnw'
                 sh './mvnw spring-boot:run'
             }
         }
